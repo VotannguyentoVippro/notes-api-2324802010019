@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo cáo Bài 1: Thực hành Điện toán đám mây</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 30px auto; max-width: 900px; padding: 0 20px; color: #333; }
+    h1, h2 { color: #0969da; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d0d7de; padding: 10px 12px; text-align: left; }
+    th { background-color: #f6f8fa; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .badge { background: #dafbe1; color: #1a7f37; padding: 3px 8px; border-radius: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Báo cáo Bài 1: Lập trình trên máy ảo đám mây</h1>
+  <p><strong>Sinh viên:</strong> Lê Anh Đức | <strong>MSSV:</strong> 2324802010019</p>
+
+  <h2>1. Bảng so sánh Máy cá nhân vs GitHub Codespace</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tiêu chí</th>
+        <th>Máy cá nhân</th>
+        <th>Codespace</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Thời gian dựng môi trường (đến khi chạy `node -v`)</strong></td>
+        <td>~15 phút (tải NodeJS, cài đặt runtime, cấu hình biến môi trường)</td>
+        <td>~35 giây (khởi tạo từ devcontainer image có sẵn)</td>
+      </tr>
+      <tr>
+        <td><strong>Số CPU, RAM (đo từ API)</strong></td>
+        <td>12 CPUs, 24 GB RAM</td>
+        <td>2 CPUs, 8 GB RAM (từ os.cpus() và os.totalmem())</td>
+      </tr>
+      <tr>
+        <td><strong>Hệ điều hành</strong></td>
+        <td>Windows 11</td>
+        <td>Linux (Ubuntu container)</td>
+      </tr>
+      <tr>
+        <td><strong>Cách truy cập từ thiết bị khác</strong></td>
+        <td>Cần kết nối chung mạng LAN qua địa chỉ IP nội bộ hoặc thiết lập Port Forwarding</td>
+        <td>Chuyển Port Visibility sang Public, truy cập qua URL HTTPS toàn cầu</td>
+      </tr>
+      <tr>
+        <td><strong>Chi phí và đơn vị đo</strong></td>
+        <td>Chi phí đầu tư phần cứng ban đầu, điện năng tiêu thụ</td>
+        <td>Đo bằng Core-hours và Storage GB-hours (GitHub Billing)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Đối chiếu 5 đặc tính điện toán đám mây theo NIST</h2>
+  <ul>
+    <li><span class="badge">1. Tự phục vụ theo yêu cầu (On-demand self-service)</span>: Khởi tạo môi trường lập trình Codespace ngay lập tức chỉ bằng một cú nhấp chuột mà không cần sự can thiệp hay phê duyệt thủ công từ quản trị viên hệ thống.</li>
+    <li><span class="badge">2. Truy cập mạng rộng rãi (Broad network access)</span>: Mở IDE và viết mã trực tiếp qua trình duyệt web từ bất kỳ thiết bị nào; mở cổng 3000 để điện thoại di động truy cập trực tiếp API qua mạng Internet.</li>
+    <li><span class="badge">3. Gộp tài nguyên (Resource pooling)</span>: Máy ảo Codespace được cấp phát từ hạ tầng máy chủ dùng chung của Microsoft Azure/GitHub, phân chia tài nguyên động cho hàng ngàn người dùng độc lập.</li>
+    <li><span class="badge">4. Co giãn nhanh chóng (Rapid elasticity)</span>: Có thể nâng/hạ cấu hình máy ảo (từ 2 cores lên 4 hoặc 8 cores) hoặc mở rộng thêm máy ảo mới khi cần và giải phóng tức thì khi ngừng sử dụng.</li>
+    <li><span class="badge">5. Dịch vụ đo lường được (Measured service)</span>: Hệ thống tự động ghi nhận chính xác từng phút máy hoạt động, tính toán chi phí theo số lượng Core-hours sử dụng trong mục GitHub Billing.</li>
+  </ul>
+</body>
+</html>
